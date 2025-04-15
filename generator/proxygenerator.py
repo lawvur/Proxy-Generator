@@ -13,7 +13,7 @@ def fetch_proxies(proxy_type="http"):
 
     url = urls.get(proxy_type.lower())
     if not url:
-        print("❌ Invalid proxy type.")
+        print("Invalid proxy type.")
         return []
 
     try:
