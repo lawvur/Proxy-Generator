@@ -13,7 +13,7 @@ def fetch_proxies(proxy_type="http"):
 
     url = urls.get(proxy_type.lower())
     if not url:
-        print("Invalid proxy type.")
+        print("invalid proxy type.")
         return []
 
     try:
@@ -24,10 +24,10 @@ def fetch_proxies(proxy_type="http"):
             print(f"Fetched {len(proxies)} proxies.")
             return proxies
         else:
-            print(f"Failed to fetch proxies: Status code {response.status_code}")
+            print(f"failed to fetch proxies: Status code {response.status_code}")
             return []
     except Exception as e:
-        print(f"Error fetching proxies: {e}")
+        print(f"error fetching proxies: {e}")
         return []
 
 def save_proxies_to_file(proxies, proxy_type):
@@ -42,9 +42,9 @@ def save_proxies_to_file(proxies, proxy_type):
     print(f"Saved to {filename}")
 
 def main():
-    print("Proxy Generator by Paranoia (@listeningon)")
-    proxy_type = input("proxy type (http / https / socks4 / socks5): ").strip().lower()
-    amount = input("how many proxies to save? (leave blank for all): ").strip()
+    print("proxy gen by law (@listeningon)")
+    proxy_type = input("proxy type http / https / socks4 / socks5: ").strip().lower()
+    amount = input("how many proxies to save? (if u leave blank as many as possible): ").strip()
 
     proxies = fetch_proxies(proxy_type)
     if amount.isdigit():
